@@ -1,0 +1,21 @@
+<% content_for :title, @location.name %>
+
+<ul id="menu">
+  <% Location.roots.each do |location| %>
+    <li><%= link_to location.name, location, class: ("active" if @location.root == location) %></li>
+  <% end %>
+</ul>
+
+<div id="submenu">
+  <%= render 'submenu_locations', locations: @location.root.descendants.arrange %>
+</div>
+
+<div id="breadcrumbs">
+  <% @location.ancestors.each do |location| %>
+    <%= link_to location.name, location %> &gt;
+  <% end %>
+</div>
+
+<h1><%= @location.name %></h1>
+
+<%= simple_format @location.name %>

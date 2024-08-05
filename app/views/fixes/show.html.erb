@@ -1,0 +1,32 @@
+<h1>Hi, I'm a <%= @issue.type %>.</h1>
+<p>My name is <%= @issue.name %></p>
+
+<div class="page-header">
+  <%= link_to fixes_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    All Fixes
+  <% end %>
+  <%= link_to edit_fix_path(@fix), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show fix</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Type:</dt>
+  <dd><%= @fix.type %></dd>
+
+  <dt>Code:</dt>
+  <dd><%= @fix.code %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @fix.name %></dd>
+
+  <dt>Chi name:</dt>
+  <dd><%= @fix.chi_name %></dd>
+
+  <dt>Is active?:</dt>
+  <dd><%= @fix.is_active? %></dd>
+
+</dl>

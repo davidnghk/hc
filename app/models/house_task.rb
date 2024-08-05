@@ -1,0 +1,1 @@
+class HouseTask < Task; end 

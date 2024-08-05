@@ -1,0 +1,50 @@
+
+<%= simple_form_for(@incident) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+<%= @incident.type %>
+<%= @incident.task_id %>
+      <div class="row ">
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.association :task, :collection => Task.where("type = ?", @incident.type.gsub('Incident', 'Task')), :label => t("task"), default: @incident.task_id %>
+          <%#= f.association :task, :label => t("task") %>
+        </div>
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.input :incident_datetime, as: :string, input_html: { class: "datetimepicker", value: Time.now.strftime('%d-%m-%Y %I:%M %p') }, :label => t("incident_datetime") %> 
+        </div>
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.input :source, :label => t("source"), collection: Incident.i18n_sources %>
+          <%#= f.input :source, collection: Incident.sources.keys %>
+        </div>
+      </div>
+
+
+      <div class="row ">
+        <div class="col-xs-8 col-md-8 ">
+           <%= f.association :location, :label => t("location") %>
+        </div>
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.input :status, :label => t("status"), collection: Incident.i18n_statuses %>
+          <%#= f.input :status, collection: Incident.i18n_statuses.keys %>
+        </div>
+      </div>
+
+
+      <div class="row ">
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.association :responsible_user, :label => t("responsible_user") %>
+        </div>
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.association :worker_user, :label => t("worker") %>
+        </div>
+      </div>
+
+    <%= f.input :details, :label => t("details") %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

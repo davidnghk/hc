@@ -1,0 +1,2 @@
+class HelpIncident < Incident  
+end

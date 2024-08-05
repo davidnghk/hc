@@ -17,5 +17,15 @@
 //= require data-confirm-modal
 //= require local-time
 //= require activestorage
-//= require turbolinks
+// require turbolinks # otherwise the clickable row is not working before refresh
 //= require_tree .
+//= require moment
+
+jQuery(function($) {
+    $("tr[data-link]").click(function() {
+		// Same tab call :
+          window.location = $(this).data('link');
+        // New tab call: 
+        //  window.open($(this).data('link'),"_Blank");
+    });
+});

@@ -1,0 +1,32 @@
+<div class="page-header">
+
+  <%= link_to sti_issue_path(@issue.type), class: 'btn btn-warning' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= "#{@issue.type.pluralize} list" %>
+  <% end %>
+
+  <%= link_to edit_issue_path(@issue), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <%= link_to sti_issue_path(@issue.type, @issue), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Delete
+  <% end %>
+
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Code:</dt>
+  <dd><%= @issue.code %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @issue.name %></dd>
+
+  <dt>Chi name:</dt>
+  <dd><%= @issue.chi_name %></dd>
+
+  <dt>Is active?:</dt>
+  <dd><%= @issue.is_active? %></dd>
+
+</dl>

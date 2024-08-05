@@ -1,0 +1,25 @@
+<div class="page-header">
+  <%#= link_to incidents_path, class: 'btn btn-default' do %>
+  <%= link_to sti_incident_path(@incident.type), class: 'btn btn-info' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t(@incident.type) %>
+  <% end %>
+  <%= link_to edit_incident_path(@incident), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><%= t("task") %>: <%= @incident.task.display_name %></dt>
+  <dt><%= t("incident_date") %>: <%= @incident.incident_datetime.strftime("%Y-%m-%d %I:%M %p") if @incident.incident_datetime? %></dt>
+  <dt><%= t("request_date") %>: <%= @incident.request_datetime.strftime("%Y-%m-%d %I:%M %p") if @incident.request_datetime? %></dt>
+  <dt><%= t("location") %>: <%= @incident.location.display_name %></dt>
+  <dt><%= t("user") %>: <%= @incident.user.name %></dt>
+  <dt><%= t("status") %>: <%= t(@incident.status) %></dt>
+  <dt><%= t("source") %>: <%= t(@incident.source) %></dt>
+  <dt><%= t("responsible_user") %>: <%= @incident.responsible_user.name if @incident.responsible_user_id? %></dt>
+  <dt><%= t("worker") %>: <%= @incident.worker_user.name if @incident.worker_user_id? %></dt>
+  <dt><%= t("details") %>: <%= @incident.details %></dt>
+
+</dl>

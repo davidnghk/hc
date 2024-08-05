@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to locations_path, class: 'btn btn-warning' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= "location list" %>
+  <% end %>
+  <%= link_to edit_location_path(@location), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <%= link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Delete
+  <% end %>
+
+</div>
+
+<dl class="dl-horizontal">
+
+  <dt>Code:</dt>
+  <dd><%= @location.code %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @location.name %></dd>
+
+  <dt>Chi name:</dt>
+  <dd><%= @location.chi_name %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @location.status %></dd>
+
+</dl>
+

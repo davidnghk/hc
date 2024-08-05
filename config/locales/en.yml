@@ -30,4 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  chi_name: "Chinese"
+
+  sources: 
+    Client: "Client"
+    Staff: "Staff"
+
+  statuses: 
+    Draft: Draft
+    Assigned: "Assigned"
+    Acknowledged: "Acknowledged"
+    Rejected: "Rejected"
+    InProgress: "InProgress"
+    PendForApproval: "PendForApproval"
+    Completed: "Completed"
+    cancelled: "Cancelled"

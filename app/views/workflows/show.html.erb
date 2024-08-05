@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to workflows_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    All Workflows
+  <% end %>
+  <%= link_to edit_workflow_path(@workflow), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show workflow</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Incident type:</dt>
+  <dd><%= @workflow.Incident_type %></dd>
+
+  <dt>Location:</dt>
+  <dd><%= @workflow.location.display_name %></dd>
+
+  <dt>Manage role:</dt>
+  <dd><%= @workflow.user.display_name %></dd>
+
+</dl>

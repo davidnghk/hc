@@ -1,0 +1,1 @@
+class RequestTask < Task; end 

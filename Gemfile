@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+#gem 'pg', '>= 0.18', '< 2.0'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -23,12 +24,12 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,17 +69,33 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
 gem 'devise_masquerade', '~> 0.6.2'
 gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
-gem 'foreman', '~> 0.84.0'
+#gem 'foreman', '~> 0.84.0'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'local_time', '~> 2.0', '>= 2.0.1'
-gem 'mini_magick', '~> 4.8'
 gem 'name_of_person', '~> 1.0'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'omniauth-github', '~> 1.3'
 gem 'omniauth-twitter', '~> 1.4'
+gem 'omniauth-google-oauth2'
 gem 'sidekiq', '~> 5.1', '>= 5.1.3'
 gem 'sitemap_generator', '~> 6.0', '>= 6.0.1'
 gem 'webpacker', '~> 3.5', '>= 3.5.3'
 gem 'whenever', require: false
+gem 'passenger'
+gem 'devise-i18n'
+gem 'aasm'
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'carrierwave'
+gem "fog-google"
+gem "google-api-client"
+gem 'geocoder'
+gem 'pdfkit'
+gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'ancestry'
+gem 'rolify'
+gem 'cancancan'

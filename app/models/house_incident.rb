@@ -1,0 +1,2 @@
+class HouseIncident < Incident  
+end

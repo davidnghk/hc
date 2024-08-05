@@ -1,0 +1,1 @@
+class RepairTask < Task; end 

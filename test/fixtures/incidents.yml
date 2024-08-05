@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  task: MyString
+  incident_datetime: 2018-12-13 22:43:07
+  request_datetime: 2018-12-13 22:43:07
+  location: one
+  user: one
+  ref: MyString
+  status: 1
+  source: 1
+  responsible_user: one
+  worker_user: one
+  heading: MyString
+  details: MyText
+
+two:
+  type: 
+  task: MyString
+  incident_datetime: 2018-12-13 22:43:07
+  request_datetime: 2018-12-13 22:43:07
+  location: two
+  user: two
+  ref: MyString
+  status: 1
+  source: 1
+  responsible_user: two
+  worker_user: two
+  heading: MyString
+  details: MyText

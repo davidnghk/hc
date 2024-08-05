@@ -1,0 +1,8 @@
+<ul>
+  <% locations.each do |location, children| %>
+    <li>
+      <%= link_to_unless_current location.name, location %>
+      <%= render 'submenu_locations', locations: children if children.present? %>
+    </li>
+  <% end %>
+</ul>

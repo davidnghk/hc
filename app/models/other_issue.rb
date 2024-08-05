@@ -1,0 +1,2 @@
+class OtherIssue < Issue
+end

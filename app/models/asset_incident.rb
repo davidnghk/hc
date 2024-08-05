@@ -1,0 +1,2 @@
+class AssetIncident < Incident  
+end

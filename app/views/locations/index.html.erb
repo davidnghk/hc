@@ -1,0 +1,46 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1><%= t("location") %></h1>  
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_location_path, class: 'btn btn-primary' do %>
+    <%= t("new") %>
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th><%= t("code") %></th>
+            <th><%= t("name") %></th>
+            <th><%= t("chi_name") %></th>
+
+            <th><%= t("parent") %></th>
+          
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @locations.each do |location| %>
+        <tr class="info" data-link="<%= location_path(location) %>">
+          <% if @type == "Location" %>
+              <td><%= location.type %></td>
+          <% end %>
+          <td><%= location.code %></td>
+          <td><%= location.name %></td>
+          <td><%= location.chi_name %></td>
+
+          <td><%= location.parent.display_name if location.parent_id? %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

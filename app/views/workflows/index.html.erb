@@ -1,0 +1,44 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Workflows</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_workflow_path, class: 'btn btn-primary' do %>
+    Add New Workflow
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th><%= t("Incident_type") %></th>
+            <th><%= t("location") %></th>
+            <th><%= t("person_in_charge") %></th>
+            
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @workflows.each do |workflow| %>
+        <tr class="info" data-link="<%= workflow_path(workflow) %>">
+          
+
+                      <td><%= workflow.Incident_type %></td>
+                      <td><%= workflow.location.display_name %></td>
+                      <td><%= workflow.user.display_name %></td>    
+          
+          </tr>
+
+      <% end %>
+    </tbody>
+  </table>
+</div>

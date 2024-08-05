@@ -1,0 +1,21 @@
+
+<%= simple_form_for(@workflow) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="row ">
+        <div class="col-xs-4 col-md-4 ">
+              <%= f.input :Incident_type, :collection => Incident.types, :label => t("task") %>
+        </div>
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.association :location, :label => t("location") %>
+        </div>
+        <div class="col-xs-4 col-md-4 ">
+          <%= f.association :user, :label => t("person_in_charge") %>
+        </div>
+      </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

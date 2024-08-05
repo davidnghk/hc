@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to tasks_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    All Tasks
+  <% end %>
+  <%= link_to edit_task_path(@task), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <%= link_to sti_task_path(@task.type, @task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Delete
+  <% end %>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Type:</dt>
+  <dd><%= @task.type %></dd>
+
+  <dt>Code:</dt>
+  <dd><%= @task.code %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @task.name %></dd>
+ 
+  <dt>Chi name:</dt>
+  <dd><%= @task.chi_name %></dd>
+
+</dl>

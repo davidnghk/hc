@@ -1,0 +1,31 @@
+zh:
+  simple_form:
+    "yes": '對'
+    "no": '不是'
+    required:
+      text: '需要'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "請查看以下問題："
+    # Examples
+      labels:
+        defaults:
+          password: '密碼'
+        user:
+          new:
+            email: '登錄電子郵件。'
+          edit:
+            email: '電子郵件。'
+      hints:
+        defaults:
+          username: '要登錄的用戶名。'
+          password: '請不要特別的字符。'
+      include_blanks:
+        defaults:
+          age: '不說'
+      prompts:
+        defaults:
+          age: '選擇你的年齡'

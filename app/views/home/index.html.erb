@@ -1,2 +1,10 @@
 <h1>Welcome to Jumpstart!</h1>
 <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<% if !user_signed_in? %>
+          <br><br>
+          <%= link_to t("sign_in"), new_user_session_path, class: "btn btn-warning btn-lg " %>
+          <%= link_to t("google"), user_google_oauth2_omniauth_authorize_path, id: "sign_in", class: "btn btn-warning btn-lg  " %><br/><br/>
+          <%= link_to t("demo"), "https://www.youtube.com/watch?v=1KiQ23y3Zk4&feature=youtu.be", id: "sign_in", class: "btn btn-success btn-lg  " %>
+
+      
+        <% end %> 
